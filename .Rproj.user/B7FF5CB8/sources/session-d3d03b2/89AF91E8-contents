@@ -1,0 +1,49 @@
+---
+title: "What We Celebrate"
+author: "Andrew Leung"
+format: html
+editor: visual
+---
+
+## What We Celebrate
+
+Here's a map of holidays!
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(leaflet)
+library(htmltools)
+```
+
+```{r}
+holidays_by_season <- readRDS("data/holidays_by_season.rds")
+```
+
+```{r}
+holiday_map <- leaflet(holidays_by_season) %>% 
+  addCircleMarkers(~longitude, 
+             ~latitude,
+             color = ~case_when(
+               season == "Winter" ~ "blue",
+               season == "Late Winter" ~ "darkblue",
+               season == "Spring" ~ "green",
+               season == "Late Spring" ~ "darkgreen",
+               season == "Summer" ~ "orange",
+               season == "Late Summer" ~ "darkorange",
+               season == "Autumn" ~ "red",
+               season == "Late Autumn" ~ "darkred",
+               TRUE ~ "gray"
+             ),
+             radius = 6,
+             label = ~lapply(paste(
+               `Event Name`, 
+               Location, 
+               Description, sep = "<br>"), HTML),
+             stroke = FALSE,
+             fillOpacity = 0.8
+             ) %>% 
+  addProviderTiles(providers$CartoDB.Positron)
+
+holiday_map
+```
