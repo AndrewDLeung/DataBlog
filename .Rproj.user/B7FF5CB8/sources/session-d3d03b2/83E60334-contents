@@ -13,7 +13,7 @@ jobs:
         
       - name: Install R packages needed for rendering
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "knitr"), repos="https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("rmarkdown", "knitr", "tidyverse", "leaflet", "htmltools"), repos="https://cloud.r-project.org")'
           
       - uses: quarto-dev/quarto-actions/setup@v2
       
