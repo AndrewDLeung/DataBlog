@@ -31,6 +31,11 @@ jobs:
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
           RENV_CONFIG_REPOS_OVERRIDE=https://packagemanager.posit.co/cran/latest Rscript -e 'renv::restore()'
 
+      - name: Configure R to prefer binaries
+        run: |
+          echo 'options(pkgType = "binary")' >> ~/.Rprofile
+
+
 
       - uses: quarto-dev/quarto-actions/setup@v2
       
