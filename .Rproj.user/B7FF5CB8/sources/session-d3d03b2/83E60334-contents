@@ -10,7 +10,13 @@ jobs:
       
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
-        
+        with:
+          r-version: '4.3.2'
+      
+      - name: Configure R to prefer binaries   # <--- MOVE THIS HERE
+        run: |
+          echo 'options(pkgType = "binary")' >> ~/.Rprofile
+      
       - name: Set R_LIBS_USER
         run: echo "R_LIBS_USER=${HOME}/R/x86_64-pc-linux-gnu-library/4.3" >> $GITHUB_ENV
 
@@ -24,13 +30,23 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev
-        
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            gdal-bin \
+            libgdal-dev \
+            libproj-dev \
+            libgeos-dev \
+            libudunits2-dev \
+            libharfbuzz-dev \
+            libfribidi-dev
+          
       - name: Restore R packages with renv
         run: |
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
           RENV_CONFIG_REPOS_OVERRIDE=https://packagemanager.posit.co/cran/latest Rscript -e 'renv::restore()'
-
 
       - uses: quarto-dev/quarto-actions/setup@v2
       

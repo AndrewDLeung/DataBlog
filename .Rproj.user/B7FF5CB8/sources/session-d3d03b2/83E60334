@@ -3,7 +3,7 @@
     "path": "~/Desktop/data-science/projects/data-blog/.github/workflows/quarto-publish.yml",
     "project_path": ".github/workflows/quarto-publish.yml",
     "type": "yaml",
-    "hash": "3008346279",
+    "hash": "3268143115",
     "contents": "",
     "dirty": false,
     "created": 1745692009945.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "31,10",
-        "scrollLine": "15"
+        "cursorPosition": "43,26",
+        "scrollLine": "22"
     },
     "folds": "",
-    "lastKnownWriteTime": 1745778919,
+    "lastKnownWriteTime": 1745794461,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1745778919838,
+    "last_content_update": 1745794461412,
     "read_only": false,
     "read_only_alternatives": []
 }
