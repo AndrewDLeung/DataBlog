@@ -14,7 +14,6 @@ jobs:
       - name: Set R_LIBS_USER
         run: echo "R_LIBS_USER=${HOME}/R/x86_64-pc-linux-gnu-library/4.3" >> $GITHUB_ENV
 
-        
       - name: Cache R packages
         uses: actions/cache@v3
         with:
@@ -29,8 +28,9 @@ jobs:
         
       - name: Install R packages needed for rendering
         run: |
-          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("rmarkdown", "knitr", "tidyverse", "leaflet", "htmltools"))'
-          
+          mkdir -p $R_LIBS_USER
+          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("rmarkdown", "knitr", "tidyverse", "leaflet", "htmltools"), lib = Sys.getenv("R_LIBS_USER"))'
+
       - uses: quarto-dev/quarto-actions/setup@v2
       
       - name: Render site
