@@ -14,6 +14,10 @@ Hi everyone! My name is Andrew Leung, and I'm on a journey to become better stor
 Here's a map of holidays!
 
 ```{r}
+library(tidyverse)
+library(leaflet)
+library(htmltools)
+
 holidays_by_season <- readRDS("../data/blog1/holidays_by_season.rds")
 
 holiday_map <- leaflet(holidays_by_season) %>% 

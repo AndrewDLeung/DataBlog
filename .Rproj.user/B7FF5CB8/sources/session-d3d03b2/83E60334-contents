@@ -29,7 +29,7 @@ jobs:
       - name: Install R packages needed for rendering
         run: |
           mkdir -p $R_LIBS_USER
-          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("rmarkdown", "knitr", "tidyverse", "leaflet", "htmltools"), lib = Sys.getenv("R_LIBS_USER"))'
+          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("tidyverse", "leaflet", "htmltools"), lib = Sys.getenv("R_LIBS_USER"))'
 
       - uses: quarto-dev/quarto-actions/setup@v2
       
