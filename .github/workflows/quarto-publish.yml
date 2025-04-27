@@ -29,7 +29,8 @@ jobs:
       - name: Restore R packages with renv
         run: |
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-          Rscript -e 'renv::restore()'
+          RENV_CONFIG_REPOS_OVERRIDE=https://packagemanager.posit.co/cran/latest Rscript -e 'renv::restore()'
+
 
       - uses: quarto-dev/quarto-actions/setup@v2
       
