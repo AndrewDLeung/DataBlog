@@ -25,12 +25,7 @@ jobs:
         
       - name: Install R packages needed for rendering
         run: |
-          Rscript -e 'if (!requireNamespace("rmarkdown", quietly = TRUE)) install.packages("rmarkdown", repos="https://cloud.r-project.org")'
-          Rscript -e 'if (!requireNamespace("knitr", quietly = TRUE)) install.packages("knitr", repos="https://cloud.r-project.org")'
-          Rscript -e 'if (!requireNamespace("tidyverse", quietly = TRUE)) install.packages("tidyverse", repos="https://cloud.r-project.org")'
-          Rscript -e 'if (!requireNamespace("leaflet", quietly = TRUE)) install.packages("leaflet", repos="https://cloud.r-project.org")'
-          Rscript -e 'if (!requireNamespace("htmltools", quietly = TRUE)) install.packages("htmltools", repos="https://cloud.r-project.org")'
-
+          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("rmarkdown", "knitr", "tidyverse", "leaflet", "htmltools"))'
           
       - uses: quarto-dev/quarto-actions/setup@v2
       

@@ -3,7 +3,7 @@
     "path": "~/Desktop/data-science/projects/data-blog/posts/what_we_celebrate.qmd",
     "project_path": "posts/what_we_celebrate.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "105403288",
     "contents": "",
     "dirty": false,
     "created": 1745690988428.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "544:142.72726440429688",
+        "rmdVisualModeLocation": "586:91.81817626953125",
         "cursorPosition": "15,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1745713537,
+    "lastKnownWriteTime": 1745714621,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1745713537154,
+    "last_content_update": 1745714621932,
     "read_only": false,
     "read_only_alternatives": []
 }
