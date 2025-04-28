@@ -7,9 +7,9 @@ editor: visual
 categories: [R, Quarto, GitHub]
 ---
 
-## What We Celebrate
+## Welcome to my first blog!
 
-Hi everyone! My name is Andrew Leung, and I'm on a journey to become better storyteller. More specifically, in a world overflowing with data, I want to help people see the story in the numbers through fun data visualizations. This blog is my way of documenting this journey.
+Hi everyone! My name is Andrew Leung, and I'm on a journey to become better storyteller. More specifically, in a world overflowing with data, I want find the pattern in the noise, using all kinds of visualization tools along the way. This blog is my way of documenting this journey. I hope you enjoy!
 
 Here's a map of holidays!
 
