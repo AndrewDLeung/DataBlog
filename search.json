@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog Posts",
+    "section": "",
+    "text": "Welcome to my blog collection!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat We Celebrate\n\n\n\n\n\n\n\n\n\n\n\nApr 26, 2025\n\n\nAndrew Leung\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/what_we_celebrate.html",
+    "href": "posts/what_we_celebrate.html",
+    "title": "What We Celebrate",
+    "section": "",
+    "text": "Hi everyone! My name is Andrew Leung, and I’m on a journey to become better storyteller. More specifically, in a world overflowing with data, I want to help people see the story in the numbers through fun data visualizations. This blog is my way of documenting this journey.\nHere’s a map of holidays!\n\nlibrary(tidyverse)     \n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(leaflet)   \nlibrary(htmltools) \n\n\nholidays_by_season &lt;- readRDS(\"../data/blog1/holidays_by_season.rds\")\n\nholiday_map &lt;- leaflet(holidays_by_season) %&gt;% \n  addCircleMarkers(~longitude, \n             ~latitude,\n             color = ~case_when(\n               season == \"Winter\" ~ \"blue\",\n               season == \"Late Winter\" ~ \"darkblue\",\n               season == \"Spring\" ~ \"green\",\n               season == \"Late Spring\" ~ \"darkgreen\",\n               season == \"Summer\" ~ \"orange\",\n               season == \"Late Summer\" ~ \"darkorange\",\n               season == \"Autumn\" ~ \"red\",\n               season == \"Late Autumn\" ~ \"darkred\",\n               TRUE ~ \"gray\"\n             ),\n             radius = 6,\n             label = ~lapply(paste(\n               `Event Name`, \n               Location, \n               Description, sep = \"&lt;br&gt;\"), HTML),\n             stroke = FALSE,\n             fillOpacity = 0.8\n             ) %&gt;% \n  addProviderTiles(providers$CartoDB.Positron)\n\nholiday_map"
+  },
+  {
+    "objectID": "posts/what_we_celebrate.html#what-we-celebrate",
+    "href": "posts/what_we_celebrate.html#what-we-celebrate",
+    "title": "What We Celebrate",
+    "section": "",
+    "text": "Hi everyone! My name is Andrew Leung, and I’m on a journey to become better storyteller. More specifically, in a world overflowing with data, I want to help people see the story in the numbers through fun data visualizations. This blog is my way of documenting this journey.\nHere’s a map of holidays!\n\nlibrary(tidyverse)     \n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(leaflet)   \nlibrary(htmltools) \n\n\nholidays_by_season &lt;- readRDS(\"../data/blog1/holidays_by_season.rds\")\n\nholiday_map &lt;- leaflet(holidays_by_season) %&gt;% \n  addCircleMarkers(~longitude, \n             ~latitude,\n             color = ~case_when(\n               season == \"Winter\" ~ \"blue\",\n               season == \"Late Winter\" ~ \"darkblue\",\n               season == \"Spring\" ~ \"green\",\n               season == \"Late Spring\" ~ \"darkgreen\",\n               season == \"Summer\" ~ \"orange\",\n               season == \"Late Summer\" ~ \"darkorange\",\n               season == \"Autumn\" ~ \"red\",\n               season == \"Late Autumn\" ~ \"darkred\",\n               TRUE ~ \"gray\"\n             ),\n             radius = 6,\n             label = ~lapply(paste(\n               `Event Name`, \n               Location, \n               Description, sep = \"&lt;br&gt;\"), HTML),\n             stroke = FALSE,\n             fillOpacity = 0.8\n             ) %&gt;% \n  addProviderTiles(providers$CartoDB.Positron)\n\nholiday_map"
+  }
+]
